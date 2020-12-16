@@ -12,6 +12,7 @@ body {
 .raleway {
   width: 100%;
   margin: 0 auto;
+
   &__hero {
     background-image: url("../images/background.jpg");
     background-size: cover;
@@ -40,11 +41,17 @@ body {
         }
 
         &__item {
-          margin-right: 45px;
+          flex-grow: 1;
 
           font-family: "Montserrat", sans-serif;
           font-size: 14px;
           font-weight: 300;
+
+          &:hover {
+            a {
+              color: $bruin;
+            }
+          }
         }
         &__logo {
           margin-right: 25px;
@@ -52,13 +59,18 @@ body {
           font-size: 55px;
         }
         &__title {
-          margin-right: auto;
+          flex-grow: 4;
 
           font-family: "Raleway", sans-serif;
           font-size: 34px;
           font-weight: 400;
         }
         &__search {
+          margin-left: 60px;
+
+          font-size: 25px;
+        }
+        &__burger {
           margin-left: 60px;
 
           font-size: 25px;
@@ -80,10 +92,14 @@ body {
         text-decoration: none;
         color: $lichtgrijs;
         font-size: 75px;
+
+        &:hover {
+          color: $wit;
+        }
       }
 
       .tagline {
-        width: 40%;
+        max-width: 800px;
         font-family: "Raleway", sans-serif;
         color: $wit;
         text-align: center;
@@ -147,8 +163,8 @@ body {
   &__articles {
     width: 90%;
     max-width: 1170px;
-    margin: 0 auto;
-    padding: 80px 0;
+    margin: 80px auto 50px auto;
+    // padding: 80px 0;
 
     @include make-col(4, 25px);
 
@@ -168,6 +184,7 @@ body {
         color: $grijs;
       }
       p {
+        margin-bottom: 30px;
         font-family: "Montserrat", sans-serif;
         font-size: 14px;
         font-weight: 300;
@@ -177,12 +194,50 @@ body {
       &::after {
         content: "";
         position: absolute;
-        bottom: -30px;
+        bottom: 0px;
         left: calc(50% - 35px);
         height: 3px;
         width: 70px;
         background-color: #f2eeea;
       }
+
+      &:hover {
+        .icon {
+          color: $bruin;
+        }
+        h1 {
+          color: $bruin;
+        }
+        &::after {
+          background-color: $bruin;
+        }
+      }
     }
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .menu__burger {
+    display: none;
+  }
+}
+@media screen and (max-width: 850px) {
+  .menu {
+    &__item {
+      display: none;
+    }
+    &__search {
+      display: none;
+    }
+  }
+
+  .raleway__articles {
+    @include make-col(2, 25px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .raleway__articles {
+    @include make-col(1, 25px);
   }
 }
