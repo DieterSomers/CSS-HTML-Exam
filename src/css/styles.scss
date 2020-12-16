@@ -22,6 +22,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     &__navbar {
       width: 90%;
       max-width: 1170px;
@@ -139,6 +140,48 @@ body {
           background-color: transparent;
           border: 2px solid $wit;
         }
+      }
+    }
+  }
+
+  &__articles {
+    width: 90%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 80px 0;
+
+    @include make-col(4, 25px);
+
+    &__asset {
+      text-align: center;
+      position: relative;
+
+      .icon {
+        font-size: 50px;
+        color: $grijs;
+      }
+      h1 {
+        font-family: "Raleway", sans-serif;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 60px;
+        color: $grijs;
+      }
+      p {
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 25px;
+        color: $lichtgrijs;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -30px;
+        left: calc(50% - 35px);
+        height: 3px;
+        width: 70px;
+        background-color: #f2eeea;
       }
     }
   }
