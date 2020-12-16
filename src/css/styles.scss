@@ -6,22 +6,27 @@
 @import "../../icons/style.css";
 
 body {
-  background-color: $grijs;
+  background-color: $wit;
 }
 
 .raleway {
   width: 100%;
   margin: 0 auto;
   &__hero {
-    min-height: 200px;
     background-image: url("../images/background.jpg");
     background-size: cover;
+    background-position: center;
 
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     &__navbar {
       width: 90%;
       max-width: 1170px;
       margin: 0 auto;
-      padding-top: 35px;
+      padding: 35px 0;
 
       .menu {
         display: flex;
@@ -61,6 +66,80 @@ body {
     }
 
     &__slider {
+      width: 95%;
+      max-width: 1620px;
+      margin: 0 auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .left,
+      .right {
+        text-decoration: none;
+        color: $lichtgrijs;
+        font-size: 75px;
+      }
+
+      .tagline {
+        width: 40%;
+        font-family: "Raleway", sans-serif;
+        color: $wit;
+        text-align: center;
+
+        h2 {
+          font-size: 36px;
+          font-weight: 500;
+        }
+        h1 {
+          font-size: 52px;
+          font-weight: 800;
+          line-height: 80px;
+        }
+        p {
+          font-family: "Montserrat", sans-serif;
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 27px;
+        }
+        button {
+          margin-top: 45px;
+
+          font-size: 14px;
+          font-weight: 800;
+          padding: 17px 50px;
+
+          color: $wit;
+          background-color: $bruin;
+          border: none;
+          border-bottom: 3px solid $donkerbruin;
+          border-radius: 4px;
+
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 35px 0;
+
+      a {
+        margin: 7px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: $lichtgrijs;
+
+        &.selected {
+          width: 15px;
+          height: 15px;
+          background-color: transparent;
+          border: 2px solid $wit;
+        }
+      }
     }
   }
 }
