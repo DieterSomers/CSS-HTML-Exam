@@ -6,16 +6,61 @@
 @import "../../icons/style.css";
 
 body {
-  background-color: #000;
-  h1 {
-    color: white;
-    background-color: purple;
-  }
-  button {
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    color: red;
-    background-color: #fff;
+  background-color: $grijs;
+}
+
+.raleway {
+  width: 100%;
+  margin: 0 auto;
+  &__hero {
+    min-height: 200px;
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+
+    &__navbar {
+      width: 90%;
+      max-width: 1170px;
+      margin: 0 auto;
+      padding-top: 35px;
+
+      .menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+          text-decoration: none;
+          color: $wit;
+        }
+
+        &__item {
+          margin-right: 45px;
+
+          font-family: "Montserrat", sans-serif;
+          font-size: 14px;
+          font-weight: 300;
+        }
+        &__logo {
+          margin-right: 25px;
+
+          font-size: 55px;
+        }
+        &__title {
+          margin-right: auto;
+
+          font-family: "Raleway", sans-serif;
+          font-size: 34px;
+          font-weight: 400;
+        }
+        &__search {
+          margin-left: 60px;
+
+          font-size: 25px;
+        }
+      }
+    }
+
+    &__slider {
+    }
   }
 }
